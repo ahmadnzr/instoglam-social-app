@@ -1,0 +1,53 @@
+.navbar {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(184, 238, 211, 0.534);
+  justify-content: space-between;
+  padding: 0 15px 0 15px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .navbar {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.icons {
+  display: flex;
+}
+
+.icon {
+  margin-left: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.iconImg {
+  width: 20px;
+  height: 20px;
+}
+
+.counter {
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}

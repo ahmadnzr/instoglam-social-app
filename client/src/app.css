@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main {
+  width: 30vw;
+}
+
+.login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  width: 30vh;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.308);
+  border-radius: 10px;
+  color: #333;
+  font-family: sans-serif;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 30%;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .form {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: lightseagreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.username {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  top: 15px;
+  right: 20px;
+}
