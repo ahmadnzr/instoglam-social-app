@@ -6,7 +6,13 @@
 }
 
 .main {
-  width: 30vw;
+  width: 100vw;
+}
+
+@media screen and (min-width: 30em) {
+  .main {
+    width: 40vw;
+  }
 }
 
 .login {
@@ -55,19 +61,10 @@ input:focus {
 }
 
 button {
-  width: 100%;
   padding: 10px;
   background-color: lightseagreen;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.username {
-  position: absolute;
-  color: white;
-  font-weight: bold;
-  top: 15px;
-  right: 20px;
 }

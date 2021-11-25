@@ -27,10 +27,10 @@ const App = () => {
             {posts.map((post) => (
               <Card key={post.id} post={post} socket={socket} user={user} />
             ))}
-            <span className="username">{user}</span>
           </div>
         </div>
       ) : (
+        // TODO: Create authentication using exiting user data
         <div className="login">
           <div className="form">
             <h2>SIGN-IN</h2>

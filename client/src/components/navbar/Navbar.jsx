@@ -54,13 +54,22 @@ const Navbar = ({ socket }) => {
         <div className="icon" onClick={() => setOpen(!open)}>
           <img src={Setting} alt="" className="iconImg" />
         </div>
+
+        {/* TODO: Add avatar for user login */}
+        
       </div>
       {open && (
         <div className="notifications">
           {notifications.map((n) => displayNotification(n))}
-          <button className="nButton" onClick={handleClickButton}>
+
+          {notifications.length > 0 ? (
+
+            <button className="nButton" onClick={handleClickButton}>
             Mark as read
           </button>
+            ): (
+              <span className="notification">you have no notifications</span>
+            )}
         </div>
       )}
     </div>
