@@ -6,11 +6,16 @@ import Share from "../../img/share.svg";
 import Info from "../../img/info.svg";
 import { useState } from "react";
 
-const Card = ({ post }) => {
+const Card = ({ post, socket, user }) => {
   const [liked, setLiked] = useState(false);
 
-  const handleNotification = () => {
-    setLiked(!liked);
+  const handleNotification = (type) => {
+    if (type === 1) setLiked(!liked);
+    socket.emit("sendNotification", {
+      senderName: user,
+      receiverName: post.username,
+      type,
+    });
   };
   return (
     <div className="card">
@@ -26,18 +31,28 @@ const Card = ({ post }) => {
             src={HeartFilled}
             alt=""
             className="cardIcon"
-            onClick={handleNotification}
+            onClick={() => handleNotification(1)}
           />
         ) : (
           <img
             src={Heart}
             alt=""
             className="cardIcon"
-            onClick={handleNotification}
+            onClick={() => handleNotification(1)}
           />
         )}
-        <img src={Comment} alt="" className="cardIcon" />
-        <img src={Share} alt="" className="cardIcon" />
+        <img
+          src={Comment}
+          alt=""
+          className="cardIcon"
+          onClick={() => handleNotification(2)}
+        />
+        <img
+          src={Share}
+          alt=""
+          className="cardIcon"
+          onClick={() => handleNotification(3)}
+        />
         <img src={Info} alt="" className="cardIcon infoIcon" />
       </div>
     </div>
